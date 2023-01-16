@@ -13,6 +13,7 @@ import { TermsAndConditionComponent } from './pages/terms-and-condition/terms-an
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { SubscriptionFormComponent } from './subscription-form/subscription-form.component';
 import { CommentFormComponent } from './comments/comment-form/comment-form.component';
+import { CommentListComponent } from './comments/comment-list/comment-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CommentFormComponent } from './comments/comment-form/comment-form.compo
     TermsAndConditionComponent,
     ContactUsComponent,
     SubscriptionFormComponent,
-    CommentFormComponent
+    CommentFormComponent,
+    CommentListComponent
   ],
   imports: [
     BrowserModule,
