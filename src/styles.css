@@ -1,3 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '~bootstrap/dist/css/bootstrap.min.css';
+/* ~ stands for node_modules folder */
+
+/* Common theme CSS variables */
+
+:root {
+  --primary-color: #026467;
+  --secondory-color: #E5F5EA;
+  --body-text-color: #596392;
+  --navbar-footer-color: #F9F9F9;
+}
