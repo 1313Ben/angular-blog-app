@@ -8,6 +8,7 @@ import { CategoryNavbarComponent } from './layouts/category-navbar/category-navb
 import { FooterComponent } from './layouts/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SingleCategoryComponent } from './pages/single-category/single-category.component';
+import { SinglePostComponent } from './pages/single-post/single-post.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SingleCategoryComponent } from './pages/single-category/single-category
     CategoryNavbarComponent,
     FooterComponent,
     HomeComponent,
-    SingleCategoryComponent
+    SingleCategoryComponent,
+    SinglePostComponent
   ],
   imports: [
     BrowserModule,
