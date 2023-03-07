@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit{
   
 
   featuredPostsArray: Array<object> = [];
+  latestPostsArray: Array<object> = [];
 
   constructor(private postService: PostsService) {}
 
@@ -17,6 +18,10 @@ export class HomeComponent implements OnInit{
     this.postService.loadFeaturedPosts().subscribe(val => {
       //console.log(val)
       this.featuredPostsArray = val;
+    })
+
+    this.postService.loadLatestPosts().subscribe(val => {
+      this.latestPostsArray = val;
     })
   }
 
