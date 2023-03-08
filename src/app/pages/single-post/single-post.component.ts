@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class SinglePostComponent implements OnInit{
 
   postData: any;
+  similarPostArray: Array<object> | any;
 
   constructor(private route: ActivatedRoute, private postService: PostsService) { }
   
@@ -19,7 +20,14 @@ export class SinglePostComponent implements OnInit{
       this.postService.loadOnePost(val['id']).subscribe(post => {
         //console.log(post)
         this.postData = post;
+        this.loadSimilarPost(this.postData.category.categoryId);
       })
+    })
+  }
+
+  loadSimilarPost(categoryId: any) {
+    this.postService.loadSimilar(categoryId).subscribe(val => {
+      this.similarPostArray = val;
     })
   }
 
