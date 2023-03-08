@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
+import { FirebaseApp } from '@angular/fire/app';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { map } from 'rxjs';
 
+import * as firebase from "firebase/compat/app";
 
 @Injectable({
   providedIn: 'root'
@@ -58,5 +60,14 @@ export class PostsService {
         })
       })
     )
+  }
+
+  countViews(postId: any) {
+    const viewsCount = {
+      views: firebase.default.firestore.FieldValue.increment(1)
+    }
+    this.afs.doc(`posts/${postId}`).update(viewsCount).then(() => {
+      console.log("Views count updatet .... !");
+    })
   }
 }
