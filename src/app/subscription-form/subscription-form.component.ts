@@ -9,6 +9,9 @@ import { Sub } from '../models/sub';
 })
 export class SubscriptionFormComponent implements OnInit{
 
+  isEmailError: boolean = false
+  isSubscribed: boolean = false
+
   constructor(private subService: SubscribersService) { }
   
   ngOnInit(): void {
@@ -27,9 +30,10 @@ export class SubscriptionFormComponent implements OnInit{
 
       if (val.empty) {
         this.subService.addSubs(subData)
+        this.isSubscribed = true
       } else {
-        console.log("Email Adress is Already in use");
-        
+        //console.log("Email Adress is Already in use");
+        this.isEmailError = true
       }
     })
   }

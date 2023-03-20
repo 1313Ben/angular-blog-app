@@ -1,4 +1,4 @@
-<div class="card shadow-effec ml-3">
+<div class="card shadow-effect">
   <div class="card-body">
     <div class="text-center mt-3 mb-5">
       <h3>SUBSCRIPTION FORM</h3>
@@ -8,10 +8,19 @@
         debitis obcaecati dolorum placeat animi ducimus quisquam? Est, accusamus
         expedita.
       </p>
+
+      <div class="alert alert-danger mt-3" *ngIf="isEmailError">
+        Email already in use
+      </div>
+      <div class="alert alert-info mt-3" *ngIf="isSubscribed">
+        Thank you for subscribing our newsletter
+      </div>
+
       <form
         class="form-inline mb-5 mt-5"
         #subForm="ngForm"
         (ngSubmit)="onSubmit(subForm.value)"
+        *ngIf="!isSubscribed"
       >
         <div class="form-group col-md-5">
           <input
